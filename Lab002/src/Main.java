@@ -1,3 +1,4 @@
+import java.util.Scanner;
 // Make a shape class with color attribute and blank getArea() method
 class Shape {
     String color;
@@ -15,6 +16,7 @@ class Rectangle extends Shape{
     int width;
     int height;
     // Override the getArea() method to calculate the area of a rectangle with the actual formula
+    @Override
     public void getArea() {
         int area = width * height;
         System.out.println("Area of the rectangle is " + area + ".");
@@ -28,7 +30,14 @@ class Rectangle extends Shape{
 }
 public class Main {
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle(5, 8);
+        System.out.println("Enter the width: ");
+        Scanner scan = new Scanner(System.in);
+        int x = scan.nextInt();
+
+        System.out.println("Enter the height: ");
+        int y = scan.nextInt();
+
+        Rectangle rectangle = new Rectangle(x, y);
         System.out.println("Color : " + rectangle.color);
         rectangle.getArea();
     }
